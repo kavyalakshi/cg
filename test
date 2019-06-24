@@ -1,0 +1,12 @@
+#list all files in the directory, also lists the sub folders 
+for root, dirs, files in os.walk("."):  
+    for filename in files:
+        print(filename)
+#puts all the sub folders in a tuple and then 
+[x[0] for x in os.walk(directory)]        
+next(os.walk('.'))[1]
+#lists all the items in a directory as files link or as directory.
+for x in os.listdir('.'):
+    if os.path.isfile(x): print 'f-', x
+    elif os.path.isdir(x): print 'd-', x
+    elif os.path.islink(x): print 'l-', x
